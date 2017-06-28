@@ -7,7 +7,7 @@
                     <label for="pseudo">
                         <strong style="font-size: 22px;margin-top: 15px;color: black">Entrer votre Pseudo </strong>
                     </label>
-                    <input required style="font-size: 22px;margin: auto;margin-top: 15px;width: 50%" type="text" [(ngModel)]='pseudo' class="form-control" id="pseudo" />
+                    <input required style="font-size: 22px;margin: auto;margin-top: 15px;width: 50%;text-align: center" type="text" [(ngModel)]='pseudo' class="form-control" id="pseudo" />
                     <h3 style="color: red;font-size: 13px;margin-top: 10px">{{msgErreur}}</h3>
                 </div>
             </td>
@@ -26,13 +26,14 @@
     <table style="width: 100%;text-align: center">
         <tr>
             <td style="width: 15%">
-                <img style="width: 100px" src="./assets/images/1.png" />
+                <img *ngIf="imageDe == true" style="width: 100px" [src]="de1" />
             </td>
             <td style="width: 15%">
-                <img style="width: 80px" src="./assets/images/up.png" />
+                <img *ngIf="good === 'up'" style="width: 80px" src="./assets/images/up.png" />
+                <img *ngIf="good == 'down'" style="width: 80px" src="./assets/images/down.png" />
             </td>
             <td style="width: 15%">
-                <img style="width: 100px" src="./assets/images/6.png" />
+                <img *ngIf="imageDe == true" style="width: 100px" [src]="de2" />
             </td>
             <td rowspan="2" style="width: 15%;text-align: center">
                 <table style="margin: auto">
@@ -58,20 +59,31 @@
                     </tr>
                     <tr>
                         <td style="height: 30px">
-                            <strong style="font-size: 20px;color: black;margin-top: 10px">0</strong>
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">{{score}}</strong>
                         </td>
                     </tr>
-                    <tr>
+                    <tr *ngIf="empty == false">
                         <td style="height: 30px;border: 1px solid black;padding: 5px 5px 5px 5px;">
-                            <strong style="font-size: 20px;color: black;margin-top: 10px">Meilleur Score : 50</strong>
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">Meilleur Score : {{meilleurScore}}</strong>
+                        </td>
+                    </tr>
+                    <tr *ngIf="empty == true">
+                        <td style="height: 30px;border: 1px solid black;padding: 5px 5px 5px 5px;">
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">Meilleur Score : 0</strong>
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
+        <!--<tr>
+            <td colspan="3" style="width: 85%">
+                <h1 *ngIf="scoreLancer != 0" style="font-size: 20px;color: black"><b>{{scoreLancer}}</b></h1>
+            </td>
+        </tr>-->
         <tr>
             <td colspan="3" style="width: 85%">
-                <button type="button" class="btn btn-primary rounded" (click)="lancer();" style="font-size: 22px;margin-top: 15px;">Lancer</button>
+                <strong *ngIf="scoreLancer != 0" style="font-size: 20px;color: black;margin-top: 10px;">{{scoreLancer}}</strong><br>
+                <button *ngIf="afficherButton == true" type="button" class="btn btn-primary rounded" (click)="lancer();" style="font-size: 22px;margin-top: 15px;">{{buttonJeu}}</button>
             </td>
         </tr>
 
@@ -80,7 +92,7 @@
 
 
 <!-- Gagner -->
-<div *ngIf="result == true" style="width: 80%;height: 240px;margin: auto;margin-top: 60px;">
+<div *ngIf="result == 'v'" style="width: 80%;height: 240px;margin: auto;margin-top: 60px;">
     <table style="width: 100%;text-align: center">
         <tr>
             <td style="width: 100%">
@@ -94,7 +106,7 @@
         </tr>
         <tr>
             <td style="width: 100%;height: 30px">
-                <strong style="font-size: 20px;color: black">Score : 50</strong>
+                <strong style="font-size: 20px;color: black">Score : {{score}}</strong>
             </td>
         </tr>
         <tr>
@@ -107,7 +119,7 @@
 </div>
 
 <!-- Perdu -->
-<div *ngIf="play == null" style="width: 80%;height: 240px;margin: auto;margin-top: 60px;">
+<div *ngIf="result == 'p'" style="width: 80%;height: 240px;margin: auto;margin-top: 60px;">
     <table style="width: 100%;text-align: center">
         <tr>
             <td style="width: 100%;height: 120px">
@@ -121,7 +133,7 @@
         </tr>
         <tr>
             <td style="width: 100%;height: 30px">
-                <strong style="font-size: 20px;color: black">Score : 10</strong>
+                <strong style="font-size: 20px;color: black">Score : {{score}}</strong>
             </td>
         </tr>
         <tr>

@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   
-  active(element: string) {
+ /* active(element: string) {
         document.getElementById('welcome').className = '';
         document.getElementById('jeu').className = '';
         document.getElementById('parametres').className = '';
         document.getElementById('regles').className = '';
         document.getElementById('meilleurScore').className = '';
         document.getElementById(element).className = 'current';
-    }
+    }*/
 }

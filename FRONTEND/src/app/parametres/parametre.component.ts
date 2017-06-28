@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
 })
 export class ParametreComponent {
     
+    ngOnInit() {
+        this.active();
+    }
+    
+    active() {
+        document.getElementById('welcome').className = '';
+        document.getElementById('jeu').className = '';
+        document.getElementById('parametres').className = 'current';
+        document.getElementById('regles').className = '';
+        document.getElementById('meilleurScore').className = '';
+    }
 }

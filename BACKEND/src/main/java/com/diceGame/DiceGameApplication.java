@@ -1,5 +1,7 @@
 package com.diceGame;
 
+import java.util.Map;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,10 +22,10 @@ public class DiceGameApplication implements CommandLineRunner {
 	@Override
 	public void run(String... arg0) throws Exception {
 
-		AbstractFactoryDB db = new AbstractFactoryDB();
+		//AbstractFactoryDB db = new AbstractFactoryDB();
 
 		/** test DataBase MySql **/
-		DBFactory dbFactoryMySql = db.getFactory(2);
+		//DBFactory dbFactoryMySql = db.getFactory(1);
 		// dbFactoryMySql.sauvegarder(20, "simo");
 
 		/** test DataBase XML **/
@@ -32,16 +34,19 @@ public class DiceGameApplication implements CommandLineRunner {
 		// dbFactoryXml.sauvegarder(20, "simo");
 
 		/** test Changer Paramètre **/
-		NbrTours.NOMBRE_MAX_TOURS = 11;
+		//NbrTours.NOMBRE_MAX_TOURS = 11;
 
-		String pseudo = dbFactoryMySql.charger().get("pseudo");
-		String score = dbFactoryMySql.charger().get("score");
-		System.out.println("*********************************");
-		System.out.println("Pseudo : " + pseudo + " - Score : " + score);
-		System.out.println("*********************************");
-
+		/** test Meilleur Score **/
+		/*Map<String, String> stockage = dbFactoryMySql.charger();
+		if (stockage != null) {
+			String pseudo = dbFactoryMySql.charger().get("pseudo");
+			String score = dbFactoryMySql.charger().get("score");
+			System.out.println("*********************************");
+			System.out.println("Pseudo : " + pseudo + " - Score : " + score);
+			System.out.println("*********************************");
+		}*/
 		/** test Partie Lancer **/
-		Partie partie = new Partie(dbFactoryMySql);
+		/*Partie partie = new Partie(dbFactoryMySql);
 		for (int i = 0; i < NbrTours.NOMBRE_MAX_TOURS; i++) {
 			System.out.println("------------------" + (i + 1) + "-------------------");
 			Result result = partie.lancer("testPartie");
@@ -75,7 +80,7 @@ public class DiceGameApplication implements CommandLineRunner {
 				}
 			}
 
-		}
+		}*/
 
 	}
 }

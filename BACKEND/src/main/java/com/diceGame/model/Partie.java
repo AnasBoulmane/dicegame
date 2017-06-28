@@ -46,12 +46,13 @@ public class Partie extends Observable {
 				arg = score;
 				getMeilleurScore().sauvegarder(score, nomJoueur);
 				Map<String, String> highscore2 = getMeilleurScore().charger();
-				System.out.println(" ---> : " + highscore2.get("score") + highscore2.get("pseudo"));
 				meilleurScore = converterStringToInteger(highscore2.get("score"));
 				pseudoMeilleurScore = highscore2.get("pseudo");
+				System.out.println("----------------- GANGER -------------------");
 			}else{
 				meilleurScore = converterStringToInteger(highscore.get("score"));
 				pseudoMeilleurScore = highscore.get("pseudo");
+				System.out.println("----------------- PERDU -------------------");
 			}
 
 		}
