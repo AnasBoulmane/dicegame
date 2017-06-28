@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_111" class="java.beans.XMLDecoder">
+ <object class="java.util.HashMap">
+  <void method="put">
+   <string>11</string>
+   <object class="java.util.HashMap">
+    <void method="put">
+     <string>score</string>
+     <string>30</string>
+    </void>
+    <void method="put">
+     <string>pseudo</string>
+     <string>testPartie</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>10</string>
+   <object class="java.util.HashMap">
+    <void method="put">
+     <string>score</string>
+     <string>30</string>
+    </void>
+    <void method="put">
+     <string>pseudo</string>
+     <string>testPartie</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

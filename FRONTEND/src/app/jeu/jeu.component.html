@@ -1,0 +1,134 @@
+<!-- Pseudo -->
+<div *ngIf="jeu == true" style="width: 100%;height: 240px;margin: auto;margin-top: 60px;">
+    <table style="width: 90%;margin: auto;text-align: center;">
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="pseudo">
+                        <strong style="font-size: 22px;margin-top: 15px;color: black">Entrer votre Pseudo </strong>
+                    </label>
+                    <input required style="font-size: 22px;margin: auto;margin-top: 15px;width: 50%" type="text" [(ngModel)]='pseudo' class="form-control" id="pseudo" />
+                    <h3 style="color: red;font-size: 13px;margin-top: 10px">{{msgErreur}}</h3>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-primary rounded" (click)="jouer();" style="font-size: 22px;margin-top: 15px;"><img src="./assets/images/de.png" style="width:50px" /></button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<!-- Jeux -->
+<div *ngIf="play == true" style="width: 80%;height: 240px;margin: auto;margin-top: 60px;">
+    <table style="width: 100%;text-align: center">
+        <tr>
+            <td style="width: 15%">
+                <img style="width: 100px" src="./assets/images/1.png" />
+            </td>
+            <td style="width: 15%">
+                <img style="width: 80px" src="./assets/images/up.png" />
+            </td>
+            <td style="width: 15%">
+                <img style="width: 100px" src="./assets/images/6.png" />
+            </td>
+            <td rowspan="2" style="width: 15%;text-align: center">
+                <table style="margin: auto">
+                    <tr>
+                        <td style="height: 30px">
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">Pseudo : {{pseudo}}</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 30px">
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">Nombre Tour</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 30px">
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">{{nbrTour}}/{{nbrTourTotal}}</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 30px">
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">Score</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 30px">
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">0</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 30px;border: 1px solid black;padding: 5px 5px 5px 5px;">
+                            <strong style="font-size: 20px;color: black;margin-top: 10px">Meilleur Score : 50</strong>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="width: 85%">
+                <button type="button" class="btn btn-primary rounded" (click)="lancer();" style="font-size: 22px;margin-top: 15px;">Lancer</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+
+<!-- Gagner -->
+<div *ngIf="result == true" style="width: 80%;height: 240px;margin: auto;margin-top: 60px;">
+    <table style="width: 100%;text-align: center">
+        <tr>
+            <td style="width: 100%">
+                <img style="width: 150px" src="./assets/images/coupe.png" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%;height: 30px">
+                <strong style="font-size: 20px;color: green">Bravo vous avez gagner</strong>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%;height: 30px">
+                <strong style="font-size: 20px;color: black">Score : 50</strong>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%;height: 30px">
+                <button type="button" class="btn btn-primary rounded" (click)="rejouer();" style="font-size: 22px;margin-top: 15px;">Rejouer</button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<!-- Perdu -->
+<div *ngIf="play == null" style="width: 80%;height: 240px;margin: auto;margin-top: 60px;">
+    <table style="width: 100%;text-align: center">
+        <tr>
+            <td style="width: 100%;height: 120px">
+                <img style="width: 180px" src="./assets/images/game-over.png" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%;height: 30px">
+                <strong style="font-size: 20px;color: red">Malheureusement vous avez perdu</strong>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%;height: 30px">
+                <strong style="font-size: 20px;color: black">Score : 10</strong>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%;height: 30px">
+                <button type="button" class="btn btn-primary rounded" (click)="rejouer();" style="font-size: 22px;margin-top: 15px;">Rejouer</button>
+            </td>
+        </tr>
+
+    </table>
+</div>

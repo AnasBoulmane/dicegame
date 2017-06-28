@@ -1,0 +1,30 @@
+<div class="main">
+  <header>
+    <h1 style="cursor: pointer" [routerLink]="['/']" (click)="active('welcome');"><a style="text-decoration: none;"><img src="./assets/images/dice-games.png" style="width: 120px" alt="Logo"></a></h1>
+  </header>
+  <!--==============================content================================-->
+  <section id="content">
+    <div class="header-block">
+      <nav class="nav-bg">
+        <ul class="menu">
+          <li style="cursor: pointer" [routerLink]="['/']" (click)="active('welcome');" id="welcome" class="current"><a style="text-decoration: none;">Accueil</a></li>
+          <li style="cursor: pointer" [routerLink]="['/jeu']" (click)="active('jeu');" id="jeu"><a style="text-decoration: none;">Jeu</a></li>
+          <li style="cursor: pointer" [routerLink]="['/parametres']" (click)="active('parametres');" id="parametres"><a style="text-decoration: none;">Paramètre</a></li>
+          <li style="cursor: pointer" [routerLink]="['/regles']" (click)="active('regles');" id="regles"><a style="text-decoration: none;">Règles</a></li>
+          <li style="cursor: pointer" [routerLink]="['/meilleurScore']" (click)="active('meilleurScore');" id="meilleurScore"><a style="text-decoration: none;">Meilleur Score</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container_24 top-1">
+      <router-outlet></router-outlet>
+      <div class="clear"></div>
+    </div>
+  </section>
+
+
+  <!--==============================footer=================================-->
+  <footer>
+    <p><strong>DiceGame</strong> <strong>© 2017</strong></p>
+    <strong>JANATI IDRISSI Mohammed & MOULINE Safaa</strong>
+  </footer>
+</div>
