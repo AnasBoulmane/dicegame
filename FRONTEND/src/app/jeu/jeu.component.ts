@@ -97,7 +97,7 @@ export class JeuComponent {
             this.buttonJeu = 'Résultat';
         }
         if (this.nbrTour === this.nbrTourTotal) {
-            if (this.score >= parseInt(this.meilleurScore)) {
+            if (this.score >= parseInt(this.meilleurScore) || this.meilleurScore==='') {
                 this.result = 'v';
             } else {
                 this.result = 'p';
@@ -125,10 +125,7 @@ export class JeuComponent {
                         this.scoreLancer = this.resultOneTour.de1.etat + this.resultOneTour.de2.etat;
                         this.nbrTour++;
                     }, 3000);
-                    this.empty = false;
-                } else {
-                    this.empty = true;
-                }
+                } 
             });
     }
 

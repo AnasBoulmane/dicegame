@@ -1,16 +1,8 @@
 package com.diceGame;
 
-import java.util.Map;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.diceGame.abstractFactory.AbstractFactoryDB;
-import com.diceGame.abstractFactory.DBFactory;
-import com.diceGame.dto.Result;
-import com.diceGame.model.Partie;
-import com.diceGame.utils.NbrTours;
 
 @SpringBootApplication
 public class DiceGameApplication implements CommandLineRunner {
