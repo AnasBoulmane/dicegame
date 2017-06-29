@@ -25,12 +25,26 @@ public class GameController {
 	private static Partie partie = null;
 
 	@GetMapping("/parametre")
-	public Map<String, String> parametre(@RequestParam("nbrTour") int nbrTour, @RequestParam("stockage") int stockage) {
+	public Map<String, String> parametre(@RequestParam("nbrTour") String nbrTour,
+			@RequestParam("stockage") String stockage) {
 		Map<String, String> result = new HashMap<>();
 		try {
-			dbFactoryDefault = db.getFactory(stockage);
-			NbrTours.NOMBRE_MAX_TOURS = nbrTour;
+			dbFactoryDefault = db.getFactory(Integer.valueOf(stockage));
+			NbrTours.NOMBRE_MAX_TOURS = Integer.valueOf(nbrTour);
 			result.put("message", "Success");
+		} catch (Exception e) {
+			result.put("message", e.getMessage());
+		}
+		return result;
+
+	}
+
+	@GetMapping("/getParametre")
+	public Map<String, String> getParametre() {
+		Map<String, String> result = new HashMap<>();
+		try {
+			result.put("nbrTour", NbrTours.NOMBRE_MAX_TOURS + "");
+			result.put("stockage", dbFactoryDefault.getClass().getSimpleName());
 		} catch (Exception e) {
 			result.put("message", e.getMessage());
 		}

@@ -117,7 +117,7 @@ ul.menu li a:hover , ul.menu li.current a {color:#fff;}
 
 .box-3 {overflow:hidden; margin-top:21px;}
 .box-3>div {float:left; width:190px; margin-right:10px;}
-.box-3>div>strong {width:70px; height:60px; display:block; float:left; margin:0px 10px 0 0; text-align:center; font-family: 'Open Sans', sans-serif; color:#fff; font-size:24px; line-height:30px; font-weight:normal; padding-top:10px;}
+.box-3>div>strong {width:70px; height:60px; display:block; float:left; margin:0px 10px 0 0; text-align:center; font-family: 'Times New Roman', Times, serif; color:#fff; font-size:24px; line-height:30px; font-weight:normal; padding-top:10px;}
 .box-3-1>strong {background:url(../images/circle-1.png) 0 0 no-repeat;}
 .box-3-2>strong {background:url(../images/circle-2.png) 0 0 no-repeat;}
 .box-3-3>strong {background:url(../images/circle-3.png) 0 0 no-repeat; color:#85a09d !important;}
@@ -136,7 +136,7 @@ ul.menu li a:hover , ul.menu li.current a {color:#fff;}
 /****************************footer************************/
 footer {width:950px; overflow:hidden; margin:0 auto; padding:12px 0px 40px 0; border-top:#d2d9d8 2px solid; text-align:center; color:#a7a7a7; }
 footer p {overflow:hidden;}
-footer strong {font-size:24px; line-height:30px; color:#b4b4b4; font-weight:normal; font-family: 'Passion One', cursive; display:inline-block; }
+footer strong {font-size:20px; line-height:30px; color:#b4b4b4; font-weight:normal; font-family: 'Times New Roman', Times, serif, cursive; display:inline-block; }
 footer span {display:inline-block;margin:7px 0 0 5px; }
 
 /**********************form**********************/
